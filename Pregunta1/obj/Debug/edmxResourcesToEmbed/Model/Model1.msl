@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Caso01ModelStoreContainer" CdmEntityContainer="Caso01Entities">
+    <EntitySetMapping Name="deducciones">
+      <EntityTypeMapping TypeName="Caso01Model.deducciones">
+        <MappingFragment StoreEntitySet="deducciones">
+          <ScalarProperty Name="codigo_deduccion" ColumnName="codigo_deduccion" />
+          <ScalarProperty Name="id_empleado" ColumnName="id_empleado" />
+          <ScalarProperty Name="cooperativa" ColumnName="cooperativa" />
+          <ScalarProperty Name="prestamo" ColumnName="prestamo" />
+          <ScalarProperty Name="ahorro" ColumnName="ahorro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="empleado">
+      <EntityTypeMapping TypeName="Caso01Model.empleado">
+        <MappingFragment StoreEntitySet="empleado">
+          <ScalarProperty Name="codigo_empleado" ColumnName="codigo_empleado" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Horas_laboradas" ColumnName="Horas_laboradas" />
+          <ScalarProperty Name="Salario_Hora" ColumnName="Salario_Hora" />
+          <ScalarProperty Name="Salario_Bruto" ColumnName="Salario_Bruto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

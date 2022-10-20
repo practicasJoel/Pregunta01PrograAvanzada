@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MiPagina.master.cs" Inherits="Pregunta1.MiPagina" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Pregunta 01</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Styles/estilos.css" rel="stylesheet" />
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="navbar">
+            <ul>
+                <li><a href="IngresarEmpleado.aspx">Ingresar Empleado</a></li>
+                <li><a href="Deduccion.aspx">Ingresar Deducciones</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <div id="footer">
+            <span>mvargas10629@ufide.ac.cr</span>
+        </div>
+    </form>
+</body>
+</html>

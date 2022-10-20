@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Caso01Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="deducciones">
+    <Key>
+      <PropertyRef Name="codigo_deduccion" />
+    </Key>
+    <Property Name="codigo_deduccion" Type="int" Nullable="false" />
+    <Property Name="id_empleado" Type="int" Nullable="false" />
+    <Property Name="cooperativa" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="prestamo" Type="decimal" Precision="12" Scale="2" />
+    <Property Name="ahorro" Type="decimal" Precision="12" Scale="2" />
+  </EntityType>
+  <EntityType Name="empleado">
+    <Key>
+      <PropertyRef Name="codigo_empleado" />
+    </Key>
+    <Property Name="codigo_empleado" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Horas_laboradas" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="Salario_Hora" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="Salario_Bruto" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__deduccion__id_em__267ABA7A">
+    <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
+    <End Role="deducciones" Type="Self.deducciones" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="empleado">
+        <PropertyRef Name="codigo_empleado" />
+      </Principal>
+      <Dependent Role="deducciones">
+        <PropertyRef Name="id_empleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Caso01ModelStoreContainer">
+    <EntitySet Name="deducciones" EntityType="Self.deducciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="empleado" EntityType="Self.empleado" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__deduccion__id_em__267ABA7A" Association="Self.FK__deduccion__id_em__267ABA7A">
+      <End Role="empleado" EntitySet="empleado" />
+      <End Role="deducciones" EntitySet="deducciones" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
